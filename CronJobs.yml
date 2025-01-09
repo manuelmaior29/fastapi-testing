@@ -11,7 +11,7 @@ spec:
           containers:
           - name: update-job-1
             image: <your-docker-image>:<tag>
-            command: ["python", "/app/update_job_1.py"]
+            command: ["python", "update_job_1.py"]
           restartPolicy: OnFailure
 ---
 apiVersion: batch/v1
@@ -27,5 +27,5 @@ spec:
           containers:
           - name: update-job-2
             image: <your-docker-image>:<tag>
-            command: ["python", "/app/update_job_2.py"]
+            command: ["python", "update_job_2.py"]
           restartPolicy: OnFailure
