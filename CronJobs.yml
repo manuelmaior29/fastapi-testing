@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: update-job-1
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: update-job-1
+            image: <your-docker-image>:<tag>
+            command: ["python", "/app/update_job_1.py"]
+          restartPolicy: OnFailure
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: update-job-2
+spec:
+  schedule: "30 * * * *" 
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: update-job-2
+            image: <your-docker-image>:<tag>
+            command: ["python", "/app/update_job_2.py"]
+          restartPolicy: OnFailure
