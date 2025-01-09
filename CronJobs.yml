@@ -19,7 +19,7 @@ kind: CronJob
 metadata:
   name: update-job-2
 spec:
-  schedule: "30 * * * *" 
+  schedule: "0 * * * *" 
   jobTemplate:
     spec:
       template:

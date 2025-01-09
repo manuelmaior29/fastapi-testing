@@ -6,3 +6,5 @@ COPY ./update_job_1.py /app
 COPY ./update_job_2.py /app
 
 RUN pip install --no-cache-dir --requirement requirements.txt
+
+CMD ["echo", "abc test"]
